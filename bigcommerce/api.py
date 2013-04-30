@@ -254,3 +254,38 @@ class Category(Resource):
 		"""Deletes the category"""
 		response, content = self.client.request('DELETE', '/categories/' + str(self.id))
 
+class Coupons(Resource):
+	"""Coupons collection"""
+
+	@classmethod
+	def get(self):
+		"""Returns list of coupons"""
+		coupons = self.client.request_json('GET', '/coupons')
+		return [Coupon(coupon) for coupon in coupons]
+
+	@classmethod
+	def get_by_id(self, id):
+		"""Returns an individual coupon by given ID"""
+		coupon = self.client.request_json('GET', '/coupons/' + str(id))
+		return Order(coupon)
+
+
+
+class Coupon(Resource):
+	"""An individual coupon"""
+
+	def create(self):
+		"""Creates a new coupon"""
+		body = json.dumps(self.__dict__)
+		coupon = self.client.request_json('POST', '/coupon', body)
+
+	def update(self):
+		"""Updates local changes to the coupon"""
+		body = json.dumps(self.__dict__)
+		coupon = self.client.request_json('PUT', '/coupons/' + str(self.id), body)
+
+	def delete(self):
+		"""Deletes the coupon"""
+		response, content = self.client.request('DELETE', '/coupons/' + str(self.id))
+
+
