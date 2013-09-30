@@ -7,7 +7,7 @@ for use in Python projects or via the Python shell.
 import httplib2
 import base64
 import json
-import socks
+import urllib
 
 API_HOST = 'http://store.mybigcommerce.com'
 API_PATH = '/api/v2'
@@ -17,275 +17,278 @@ HTTP_PROXY = None
 HTTP_PROXY_PORT = 80
 
 class Connection(object):
-	host      = API_HOST
-	base_path = API_PATH
-	user 	  = API_USER
-	api_key   = API_KEY
-	http_proxy = HTTP_PROXY
-	http_proxy_port = HTTP_PROXY_PORT
+    host      = API_HOST
+    base_path = API_PATH
+    user      = API_USER
+    api_key   = API_KEY
+    http_proxy = HTTP_PROXY
+    http_proxy_port = HTTP_PROXY_PORT
 
-	def handle_response(self, response):
-		pass
+    def handle_response(self, response):
+        pass
 
-	def request_json(self, method, path, data=None):
-		response, content = self.request(method, path, data)
-		if response.status == 200 or response.status == 201:
-			return json.loads(content)
-		else:
-			print response
-			raise Exception(response.status)
+    def request_json(self, method, path, data=None):
+        response, content = self.request(method, path, data)
+        if response.status == 200 or response.status == 201:
+            return json.loads(content)
+        else:
+            print content
+            raise Exception(response.status)
 
-	def build_request_headers(self):
-		auth = base64.b64encode(self.user + ':' + self.api_key)
-		return { 'Authorization' : 'Basic ' + auth, 'Accept' : 'application/json' }
+    def build_request_headers(self):
+        auth = base64.b64encode(self.user + ':' + self.api_key)
+        return { 'Authorization' : 'Basic ' + auth }
 
-	def request(self, method, path, body=None):
-		if self.http_proxy is not None:
-			proxy = httplib2.ProxyInfo(socks.PROXY_TYPE_HTTP, self.http_proxy, self.http_proxy_port)
-			http = httplib2.Http(proxy_info=proxy)
-		else:
-			http = httplib2.Http()
-		url = self.host + self.base_path + path
-		headers = self.build_request_headers()
-		if body: headers['Content-Type'] = 'application/json'
-		return http.request(url, method, headers=headers, body=body)
+    def request(self, method, path, body=None):
+        if self.http_proxy is not None:
+            proxy = httplib2.ProxyInfo(httplib2.socks.PROXY_TYPE_HTTP, self.http_proxy, self.http_proxy_port)
+            http = httplib2.Http(proxy_info=proxy)
+        else:
+            http = httplib2.Http()
+        url = self.host + self.base_path + path
+        headers = self.build_request_headers()
+        if body:
+            headers['Content-Type'] = 'application/json'
+        print url, method, headers, body
+        return http.request(url, method, headers=headers, body=body)
 
 class Resource(object):
-	"""Base class representing BigCommerce resources"""
+    """Base class representing BigCommerce resources"""
 
-	client = Connection()
+    client = Connection()
 
-	def __init__(self, fields=None):
-		self.__dict__ = fields or dict()
+    def __init__(self, fields=None):
+        self.__dict__ = fields or dict()
 
 class Time(Resource):
-	"""Tests the availability of the API."""
+    """Tests the availability of the API."""
 
-	@classmethod
-	def get(self):
-		"""Returns the current time stamp of the BigCommerce store."""
-		return self.client.request_json('GET', '/time')
+    @classmethod
+    def get(self):
+        """Returns the current time stamp of the BigCommerce store."""
+        return self.client.request_json('GET', '/time')
 
 class Products(Resource):
-	"""The collection of products in a store"""
+    """The collection of products in a store"""
 
-	@classmethod
-	def get(self):
-		"""Returns list of products"""
-		products_list = self.client.request_json('GET', '/products')
-		return [Product(product) for product in products_list]
+    @classmethod
+    def get(self):
+        """Returns list of products"""
+        products_list = self.client.request_json('GET', '/products')
+        return [Product(product) for product in products_list]
 
-	@classmethod
-	def get_by_id(self, id):
-		"""Returns an individual product by given ID"""
-		product = self.client.request_json('GET', '/products/' + str(id))
-		return Product(product)
+    @classmethod
+    def get_by_id(self, id):
+        """Returns an individual product by given ID"""
+        product = self.client.request_json('GET', '/products/' + str(id))
+        return Product(product)
 
 class Product(Resource):
-	"""An individual product"""
+    """An individual product"""
 
-	def update(self):
-		"""Updates local changes to the product"""
-		body = json.dumps(self.__dict__)
-		product = self.client.request_json('PUT', '/products/' + str(self.id), body)
+    def update(self):
+        """Updates local changes to the product"""
+        body = json.dumps(self.__dict__)
+        product = self.client.request_json('PUT', '/products/' + str(self.id), body)
 
-	def delete(self):
-		"""Deletes the product"""
-		response, content = self.client.request('DELETE', '/products/' + str(self.id))
+    def delete(self):
+        """Deletes the product"""
+        response, content = self.client.request('DELETE', '/products/' + str(self.id))
 
 class Brands(Resource):
-	"""Brands collection"""
+    """Brands collection"""
 
-	@classmethod
-	def get(self):
-		"""Returns list of brands"""
-		brands_list = self.client.request_json('GET', '/brands')
-		return [Brand(brand) for brand in brands_list]
+    @classmethod
+    def get(self):
+        """Returns list of brands"""
+        brands_list = self.client.request_json('GET', '/brands')
+        return [Brand(brand) for brand in brands_list]
 
-	@classmethod
-	def get_by_id(self, id):
-		"""Returns an individual brand by given ID"""
-		product = self.client.request_json('GET', '/brands/' + str(id))
-		return Product(product)
+    @classmethod
+    def get_by_id(self, id):
+        """Returns an individual brand by given ID"""
+        product = self.client.request_json('GET', '/brands/' + str(id))
+        return Product(product)
 
 class Brand(Resource):
-	"""An individual brand"""
+    """An individual brand"""
 
-	def create(self):
-		"""Creates a new brand"""
-		body = json.dumps(self.__dict__)
-		brand = self.client.request_json('PUT', '/brands', body)
+    def create(self):
+        """Creates a new brand"""
+        body = json.dumps(self.__dict__)
+        brand = self.client.request_json('PUT', '/brands', body)
 
-	def update(self):
-		"""Updates local changes to the brand"""
-		body = json.dumps(self.__dict__)
-		brand = self.client.request_json('PUT', '/brands/' + str(self.id), body)
-		print brand['name']
+    def update(self):
+        """Updates local changes to the brand"""
+        body = json.dumps(self.__dict__)
+        brand = self.client.request_json('PUT', '/brands/' + str(self.id), body)
+        print brand['name']
 
-	def delete(self):
-		"""Deletes the brand"""
-		response, content = self.client.request('DELETE', '/brands/' + str(self.id))
+    def delete(self):
+        """Deletes the brand"""
+        response, content = self.client.request('DELETE', '/brands/' + str(self.id))
 
 class Customers(Resource):
-	"""Customers collection"""
+    """Customers collection"""
 
-	@classmethod
-	def get(self):
-		"""Returns list of customers"""
-		customers = self.client.request_json('GET', '/customers')
-		return [Customer(customer) for customer in customers]
+    @classmethod
+    def get(self):
+        """Returns list of customers"""
+        customers = self.client.request_json('GET', '/customers')
+        return [Customer(customer) for customer in customers]
 
-	@classmethod
-	def get_by_id(self, id):
-		"""Returns an individual customer by given ID"""
-		customer = self.client.request_json('GET', '/customers/' + str(id))
-		return Customer(customer)
+    @classmethod
+    def get_by_id(self, id):
+        """Returns an individual customer by given ID"""
+        customer = self.client.request_json('GET', '/customers/' + str(id))
+        return Customer(customer)
 
 class Customer(Resource):
-	"""An individual customer"""
+    """An individual customer"""
 
-	def create(self):
-		"""Creates a new customer"""
-		body = json.dumps(self.__dict__)
-		customer = self.client.request_json('PUT', '/customers', body)
+    def create(self):
+        """Creates a new customer"""
+        body = json.dumps(self.__dict__)
+        customer = self.client.request_json('PUT', '/customers', body)
 
-	def update(self):
-		"""Updates local changes to the customer"""
-		body = json.dumps(self.__dict__)
-		customer = self.client.request_json('PUT', '/customers/' + str(self.id), body)
+    def update(self):
+        """Updates local changes to the customer"""
+        body = json.dumps(self.__dict__)
+        customer = self.client.request_json('PUT', '/customers/' + str(self.id), body)
 
-	def delete(self):
-		"""Deletes the customer"""
-		response, content = self.client.request('DELETE', '/customers/' + str(self.id))
+    def delete(self):
+        """Deletes the customer"""
+        response, content = self.client.request('DELETE', '/customers/' + str(self.id))
 
 class Orders(Resource):
-	"""Orders collection"""
+    """Orders collection"""
 
-	@classmethod
-	def get(self):
-		"""Returns list of orders"""
-		orders = self.client.request_json('GET', '/orders')
-		return [Order(order) for order in orders]
+    @classmethod
+    def get(self):
+        """Returns list of orders"""
+        orders = self.client.request_json('GET', '/orders')
+        return [Order(order) for order in orders]
 
-	@classmethod
-	def get_by_id(self, id):
-		"""Returns an individual order by given ID"""
-		order = self.client.request_json('GET', '/orders/' + str(id))
-		return Order(order)
+    @classmethod
+    def get_by_id(self, id):
+        """Returns an individual order by given ID"""
+        order = self.client.request_json('GET', '/orders/' + str(id))
+        return Order(order)
 
 class Order(Resource):
-	"""An individual order"""
+    """An individual order"""
 
-	def create(self):
-		"""Creates a new order"""
-		body = json.dumps(self.__dict__)
-		order = self.client.request_json('PUT', '/orders', body)
+    def create(self):
+        """Creates a new order"""
+        body = json.dumps(self.__dict__)
+        order = self.client.request_json('PUT', '/orders', body)
 
-	def update(self):
-		"""Updates local changes to the order"""
-		body = json.dumps(self.__dict__)
-		order = self.client.request_json('PUT', '/orders/' + str(self.id), body)
+    def update(self):
+        """Updates local changes to the order"""
+        body = json.dumps(self.__dict__)
+        order = self.client.request_json('PUT', '/orders/' + str(self.id), body)
 
-	def delete(self):
-		"""Deletes the order"""
-		response, content = self.client.request('DELETE', '/orders/' + str(self.id))
+    def delete(self):
+        """Deletes the order"""
+        response, content = self.client.request('DELETE', '/orders/' + str(self.id))
 
 class OptionSets(Resource):
-	"""Option sets collection"""
+    """Option sets collection"""
 
-	@classmethod
-	def get(self):
-		"""Returns list of option sets"""
-		optionsets = self.client.request_json('GET', '/optionsets')
-		return [OptionSet(optionset) for optionset in optionsets]
+    @classmethod
+    def get(self):
+        """Returns list of option sets"""
+        optionsets = self.client.request_json('GET', '/optionsets')
+        return [OptionSet(optionset) for optionset in optionsets]
 
-	@classmethod
-	def get_by_id(self, id):
-		"""Returns an individual option set by given ID"""
-		optionset = self.client.request_json('GET', '/optionsets/' + str(id))
-		return OptionSet(optionset)
+    @classmethod
+    def get_by_id(self, id):
+        """Returns an individual option set by given ID"""
+        optionset = self.client.request_json('GET', '/optionsets/' + str(id))
+        return OptionSet(optionset)
 
 class OptionSet(Resource):
-	"""An individual option set"""
+    """An individual option set"""
 
-	def create(self):
-		"""Creates a new option set"""
-		body = json.dumps(self.__dict__)
-		optionset = self.client.request_json('PUT', '/optionsets', body)
+    def create(self):
+        """Creates a new option set"""
+        body = json.dumps(self.__dict__)
+        optionset = self.client.request_json('PUT', '/optionsets', body)
 
-	def update(self):
-		"""Updates local changes to the option set"""
-		body = json.dumps(self.__dict__)
-		optionset = self.client.request_json('PUT', '/optionsets/' + str(self.id), body)
+    def update(self):
+        """Updates local changes to the option set"""
+        body = json.dumps(self.__dict__)
+        optionset = self.client.request_json('PUT', '/optionsets/' + str(self.id), body)
 
-	def delete(self):
-		"""Deletes the option set"""
-		response, content = self.client.request('DELETE', '/optionsets/' + str(self.id))
+    def delete(self):
+        """Deletes the option set"""
+        response, content = self.client.request('DELETE', '/optionsets/' + str(self.id))
 
 class Categories(Resource):
-	"""Categories collection"""
+    """Categories collection"""
 
-	@classmethod
-	def get(self):
-		"""Returns list of categories"""
-		categories = self.client.request_json('GET', '/categories')
-		return [Category(category) for category in categories]
+    @classmethod
+    def get(self):
+        """Returns list of categories"""
+        categories = self.client.request_json('GET', '/categories')
+        return [Category(category) for category in categories]
 
-	@classmethod
-	def get_by_id(self, id):
-		"""Returns an individual category by given ID"""
-		category = self.client.request_json('GET', '/categories/' + str(id))
-		return Category(category)
+    @classmethod
+    def get_by_id(self, id):
+        """Returns an individual category by given ID"""
+        category = self.client.request_json('GET', '/categories/' + str(id))
+        return Category(category)
 
 class Category(Resource):
-	"""An individual category"""
+    """An individual category"""
 
-	def create(self):
-		"""Creates a new category"""
-		body = json.dumps(self.__dict__)
-		category = self.client.request_json('PUT', '/categories', body)
+    def create(self):
+        """Creates a new category"""
+        body = json.dumps(self.__dict__)
+        category = self.client.request_json('PUT', '/categories', body)
 
-	def update(self):
-		"""Updates local changes to the category"""
-		body = json.dumps(self.__dict__)
-		category = self.client.request_json('PUT', '/categories/' + str(self.id), body)
+    def update(self):
+        """Updates local changes to the category"""
+        body = json.dumps(self.__dict__)
+        category = self.client.request_json('PUT', '/categories/' + str(self.id), body)
 
-	def delete(self):
-		"""Deletes the category"""
-		response, content = self.client.request('DELETE', '/categories/' + str(self.id))
+    def delete(self):
+        """Deletes the category"""
+        response, content = self.client.request('DELETE', '/categories/' + str(self.id))
 
 class Coupons(Resource):
-	"""Coupons collection"""
+    """Coupons collection"""
 
-	@classmethod
-	def get(self):
-		"""Returns list of coupons"""
-		coupons = self.client.request_json('GET', '/coupons')
-		return [Coupon(coupon) for coupon in coupons]
+    @classmethod
+    def get(self):
+        """Returns list of coupons"""
+        coupons = self.client.request_json('GET', '/coupons')
+        return [Coupon(coupon) for coupon in coupons]
 
-	@classmethod
-	def get_by_id(self, id):
-		"""Returns an individual coupon by given ID"""
-		coupon = self.client.request_json('GET', '/coupons/' + str(id))
-		return Order(coupon)
+    @classmethod
+    def get_by_id(self, id):
+        """Returns an individual coupon by given ID"""
+        coupon = self.client.request_json('GET', '/coupons/' + str(id))
+        return Coupon(coupon)
+
 
 
 
 class Coupon(Resource):
-	"""An individual coupon"""
+    """An individual coupon"""
 
-	def create(self):
-		"""Creates a new coupon"""
-		body = json.dumps(self.__dict__)
-		coupon = self.client.request_json('POST', '/coupon', body)
+    def create(self):
+        """Creates a new coupon"""
+        body = json.dumps(self.__dict__)
+        coupon = self.client.request_json('POST', '/coupons', body)
 
-	def update(self):
-		"""Updates local changes to the coupon"""
-		body = json.dumps(self.__dict__)
-		coupon = self.client.request_json('PUT', '/coupons/' + str(self.id), body)
+    def update(self):
+        """Updates local changes to the coupon"""
+        body = json.dumps(self.__dict__)
+        coupon = self.client.request_json('PUT', '/coupons/%s' % self.id, body)
 
-	def delete(self):
-		"""Deletes the coupon"""
-		response, content = self.client.request('DELETE', '/coupons/' + str(self.id))
+    def delete(self):
+        """Deletes the coupon"""
+        response, content = self.client.request('DELETE', '/coupons/' + str(self.id))
 
 
