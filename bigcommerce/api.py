@@ -9,10 +9,10 @@ import base64
 import json
 import urllib
 
-API_HOST = 'http://store.mybigcommerce.com'
+API_HOST = 'http://liveyoursport.com'
 API_PATH = '/api/v2'
-API_USER = 'admin'
-API_KEY  = 'yourpasswordhere'
+API_USER = 'alfons'
+API_KEY  = '87886be9d3c84e6a37cf1c1c113092fd5229d861'
 HTTP_PROXY = None
 HTTP_PROXY_PORT = 80
 

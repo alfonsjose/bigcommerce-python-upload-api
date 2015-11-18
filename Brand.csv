@@ -1,0 +1,916 @@
+Brand Name,ID
+Prince,63
+Dunlop,64
+Head,65
+Adidas,66
+Akslen,67
+Aptonia,68
+Arena,69
+Artengo,70
+Asics,71
+Babolat,72
+Body Sculpture,73
+Btwin,74
+Callaway,76
+Camelbak,77
+Caperlan,78
+Chessncrafts,79
+Cleveland,80
+Co Fit,81
+Cosco,82
+Donic,83
+Elite,84
+Erke,85
+Finis,86
+Geologic,87
+Geonaute,88
+Giant,89
+Impulse,91
+Iso Solid,92
+Jawbone,93
+Joes Joe's,94
+Joma,95
+Joola,96
+Kalenji,97
+Karakal,98
+Kipsta,99
+Kookaburra,100
+Kross,101
+Limar,103
+Manica,104
+Nabaiji,106
+NewFeel,107
+Nike,108
+Nivia,109
+Odyssey,110
+Oxelo,111
+Park Tool,112
+Pedro,113
+Polar,114
+Puma,115
+Quechua,116
+Reebok,117
+Rocketballz,118
+SG,119
+Sigma,120
+Silicone,121
+Simond,122
+Sklz,123
+Slazenger,124
+Sleek,125
+Spalding,126
+Speedo,127
+Stag,128
+Stiga,130
+Sudu,131
+Suunto,132
+Tecnifibre,134
+Tektro,135
+Thwack,136
+Tibhar,137
+Topeak,138
+Tretorn,139
+Tribord,140
+Tunturi,141
+Tynor,142
+USI,143
+Victor,145
+Vijayanti,146
+Viva,147
+WildCraft,148
+Wilson,149
+Yasaka,150
+Yonex,151
+Zixtro,152
+Zepp,153
+Yonker,154
+Domyos,155
+Phospor Watch,156
+Inesis,157
+Withings,158
+Wahoo Fitnes,159
+Vincita,160
+Vampire,161
+Universal,162
+Unique,163
+U.S. Kids,164
+TaylorMade,165
+Toppro,166
+Top Pro,167
+TomTom,168
+Titleist,169
+SwingTIP,170
+SS,171
+Sprint,172
+4iiii,173
+Spartan,174
+SOTX,175
+Solognac,176
+Solinco,177
+SOLE,178
+Sof Sole,179
+SM,180
+Slime,181
+Fouganza,182
+Runalyzer,183
+RSL,184
+Ranger,185
+Rakshak,186
+Q-Lite,187
+Pro-Kennex,188
+Precor,189
+Pots,190
+Pota,191
+Swimovate,192
+Park,193
+Planet,194
+Pinnacle,195
+Ping,196
+Phyode,197
+Parrot,198
+Nuvo,200
+Nelco,201
+MRF,202
+Moonwalkr,203
+Misfit,204
+Max,205
+Magellan,206
+Li-Ning,207
+McDavid,208
+LifeTrak,209
+LEUKO,210
+BAS,211
+Kinesio,212
+Jonex,213
+Impertus,214
+i-MASK,215
+iRun,216
+iHealth,217
+Hydrapak,218
+Horizon,219
+Gymnic,220
+Gosen,221
+Golsil,222
+Go Siwm,223
+GM,224
+G.K.I.,225
+GetActive,226
+Gecko,227
+Garmin,228
+Flx,229
+FUSION SPORTS UK,230
+FUEL,231
+Friendship,232
+Freeload,233
+Fitbit,234
+Elastoplast,235
+DOME,236
+Cratoni,237
+Club,238
+Cateye,239
+Buzz Rack,240
+Bushnell,241
+Bremshey,242
+BOSU,243
+Black Panther,244
+Bicisupport,245
+BDM,246
+Bauer,247
+Bar Fly,248
+Ashaway,249
+Aqua,250
+ALFA,251
+AIREX,252
+Soleus,253
+Inov8,254
+K-Swiss,255
+Merrell,257
+Milestone Pod,258
+Mizuno,259
+Tourna,260
+Aivin,261
+Kanton,262
+Fox40,263
+Kirschbaum,264
+Montrail,265
+Unicorn,266
+New Balance,267
+Tatonka,268
+Tasmanian Tiger,269
+Tifosi,270
+Saucony,272
+Salming,274
+Under Armour,275
+Nittaku,276
+PowerGlide,277
+Vibram,278
+TSP,279
+VivoBarefoot,281
+Salomon,282
+Walsh,283
+Zoot,284
+Zefal,285
+GIZMO,286
+Fiber,287
+Good Horse,288
+Cascade,289
+TK,290
+Harrow,291
+PRO FIT,292
+Hi-Tec,293
+Lifeline,294
+Protos,295
+Sachin,296
+LEW,297
+Leverage,298
+Coghlan's,299
+Spiral,300
+Jiang,301
+Dynamo,302
+Starfighter,303
+Leon Paul,304
+Amico,305
+Golware,306
+Generic,307
+Star Impact,308
+Balls,309
+Healthline,310
+Rishon Sport Tools,311
+Racket Buddy,312
+Pocket Radar,313
+Kaizen,314
+Stanlay,315
+Lobster,316
+Masuri,317
+Shrey,318
+Proline,319
+Ecowellness,320
+Vicky,321
+Stanford,322
+Snugpak,323
+Mil-Com,324
+Web-Tex,325
+Mckinley,326
+Vaude,327
+Edelrid,328
+Survivavpure,329
+Nakamura,330
+Presto,331
+Cosfer,332
+Sharpfit,333
+Fox Exer,334
+Indpro,335
+Octane,336
+Konex,337
+Vinex,338
+Osel,339
+HotMuggs,340
+Deuter,341
+iCool,342
+Exer,343
+Etonic,344
+Cruze,345
+Aquafit,346
+PCB,347
+Pro Bodyline,348
+Miche,349
+Energie,350
+HDL,351
+Silver's,352
+Baspo,353
+Butterfly,354
+Saiga,356
+Sensoria,357
+Gray-Nicolls,358
+ViPR,359
+Mavic,360
+Joes,361
+XLR8,362
+Eleiko,363
+Aeromic,364
+Studion,365
+LES MILLS,366
+PF,367
+Trigger Point,368
+Kimony,369
+Toalson,370
+RBZ,371
+Srixon,372
+Welcare,373
+Body Gym,374
+Sigg,375
+Spree,376
+Harbinger,378
+Brooks,379
+Dynafit,380
+Freet,381
+Haglofs,383
+Bio Plus,386
+Aerozine,399
+Apacs,400
+Apex,401
+Aqua Sphere,402
+Aquamira,403
+Aquapac,404
+Anatom,405
+Basket,406
+Bench Inspire,407
+Ben's100,408
+BH,409
+Black Diamond,410
+BODY SOLID,411
+Bothe,412
+Bruce Lee,413
+Brunton,414
+Cabin,415
+Camp,416
+Capestorm,417
+Carlton,418
+Deemark,419
+Doite,420
+DSC,421
+Dukes,422
+Easton,423
+Eno,424
+Ess,425
+Fit-King,426
+Foot,427
+Canterbury,428
+FUSION,429
+Golf,431
+Gsi,432
+Ha-Ko,433
+Ektelon,435
+Headley,436
+Infinite,439
+Inspire,440
+Kamachi,441
+Keen,442
+Lafuma,443
+Lifespan,444
+Lonsdale,445
+LP,446
+Luna,447
+Magic Home Gym,448
+Magnum,449
+Marcy,450
+Lizard,451
+Military,452
+Millet,453
+Montane,455
+Mueller,456
+Multimat,457
+Muscle Solid,458
+Molten,459
+Morrant,460
+Novafit,461
+NRS,462
+Pelican,463
+Pmi,464
+Potable,465
+Primus,466
+Princeton,467
+Rab,468
+Rhino,469
+Rossignol,470
+Rothco,471
+Nordisk Mos,472
+Optimum,473
+Sawyer,474
+Schwinn,475
+SCS,476
+Seadoo,477
+Smith,478
+Source,479
+Spirit,480
+Stikage,481
+Table,482
+Tennis,484
+Titan,485
+TRUE,486
+Tuff Stuff,487
+V22,488
+Victorinox,489
+VirgoFit,490
+Wileyx,491
+Winmax,493
+XTERRA,494
+Zamberlan,495
+Teva,496
+Saxon,498
+Orao,499
+Jagwire,500
+KMC,501
+VP,502
+Striiv,503
+Triumph,504
+SI,505
+Velocity Fitness,507
+DreamFit,508
+AERO,509
+Camel,510
+Wiki,511
+Bowflex,512
+Mio,513
+720 Armour,514
+TRX,515
+Keny,516
+Power Block,518
+Everlast,519
+Kenda,520
+Helly Hansen,521
+Inov-8,522
+Chaco,523
+Altra,524
+Karhu,525
+Ecco USA,526
+Newton Running,527
+On,528
+Pearl Izumi,529
+Hoka One One,530
+Vibram FiveFingers,531
+OluKai,532
+Skechers,533
+Topo Athletic,534
+Ryka,535
+Spira,537
+Gunn and Moore,543
+Hebe,544
+Ryder,545
+Red Pillar,546
+Diadora,547
+Running,548
+Lotto,549
+Fila,550
+Male,551
+Lacoste,552
+Female,553
+Hello Kitty,554
+Gryphon,555
+Grays,556
+Voodoo,557
+Mercian,558
+Dita,559
+Byte,562
+Aratac,563
+Hawk,564
+Sagar,566
+SDM,567
+Khanna,569
+Burn,570
+Pro-Supex,572
+Attiva,573
+Kuaike,574
+Mumbai Indians,575
+Omtex,576
+Solomon,577
+Truetemper,578
+Ben Sayars,579
+PGA Tour,580
+Power,581
+FJ,582
+Scotty,583
+Aventura,584
+Cold Steel,585
+Coleman,586
+Kingcamp,587
+Lifestraw,588
+N-Rit,589
+Rolson,590
+Swiss Military,591
+Alpenheat,592
+Raleigh,593
+Suncross,594
+Afton,595
+UHLSports,596
+Newton,598
+The North Face,599
+Merrel,600
+Scott,601
+La Sportiva,602
+Taylor Made,607
+Prokennex,612
+Silvers,618
+Vector-X,619
+Price,622
+Seka,636
+Omron,637
+Columbia,638
+Orchid,639
+Thera-Band,640
+S.S,641
+Ultimate,642
+Intex,643
+Enkay,644
+Speedy,645
+Shield,646
+Vixen,647
+Headly,648
+Fox 40,649
+Star,650
+ACS,651
+Mikado,652
+Total,653
+Pankaj,654
+Bowlers,655
+Classic,656
+Synco,657
+Sarvodaya,658
+3T,659
+Ashwin,660
+Eagle,661
+Oppo,662
+Flash,663
+Sofsole,664
+REL,665
+Gray Nicolls,666
+Sporti,667
+Aquatica,668
+Technifibre,669
+Penbrooke,670
+Billabong,671
+Robic,672
+The Finals,673
+My Pool Pal,674
+Tuffy,675
+Athena,676
+Roxy,677
+Body Glove,678
+Rip Curl,679
+HARDCORESPORT,680
+Custom Swim Caps,681
+Konfidence,682
+Quiksilver,683
+O'Neill,684
+Funky Trunks,685
+Funkita,686
+Barracuda,687
+Xcel,688
+Orca,689
+TYR,690
+2XU,691
+Bettertimes,692
+Mares,693
+Lole,694
+Next,695
+Prana,696
+Maxine,697
+Zone 3,698
+Bikini Lab,699
+Nautica,700
+Hurley,701
+Swim Systems,702
+Seea,703
+Oakley,704
+B.Swim,705
+O'Neill 365,706
+Turbo,707
+FOX,708
+Gabar,709
+Longitude,710
+Jantzen,711
+EQ Swimwear,712
+Beach Diva,713
+Nineteen,714
+Blueseventy,715
+Profile Design,716
+Huub,717
+Rocket Science Sports,718
+ROKA Sports,719
+DeSoto,720
+Kingdom & State,721
+Magicsuit by Miraclesuit,722
+ScubaMax,723
+Seafolly,724
+Trak,725
+Acme Fitness,726
+Dr. Comfort,727
+CA,728
+Sync,729
+Sportline,730
+ATS,731
+WeGo,732
+Skullcandy,733
+NA,734
+Turtle Fur,735
+Life Is Good,736
+lucy,737
+Spyder,738
+CALIA by Carrie Underwood,739
+Timex,740
+Yurbuds,741
+Griffin Technology,742
+Nathan,743
+Otterbox,744
+Dry Case,745
+Burton,746
+SMS Audio,747
+AfterShokz,748
+Jaybird,749
+YOO,750
+Scosche,751
+Pro-Tec,752
+Hely,753
+Cadence,754
+Spenco,755
+Superfeet,756
+Sidearm,757
+Stance,758
+Homedics,759
+Qardio,760
+Battle,761
+Fightdentist,762
+Bodyguard Pro,763
+Shock Doctor,764
+TapouT,765
+Jordan,766
+FlipBelt,767
+Vitalsox,768
+Fitsok,769
+Gamma,770
+Luxilon,771
+Forten,772
+Genesis,773
+Alien,774
+Alpha,775
+KLiP,776
+Signum Pro,777
+AG International,778
+Thorlos,779
+Gearbox,780
+E-Force,781
+ThermaCELL,782
+Dicks,783
+GoFit,784
+Cramer,785
+SISU,786
+Xshot,787
+Rage,788
+frogg toggs,789
+Gilbert,790
+Mikasa,791
+OBO,792
+STX,793
+Brine,794
+CranBarry,795
+Ringside,796
+UFC,797
+Century,798
+Combat,799
+XPROTEX,800
+Fitness Gear,801
+THERA PEARL,802
+Mission,803
+HYPERICE,804
+Dr. Cool,805
+PEAR,806
+Kettleglove,807
+Bionic,808
+CEP,809
+Hot Glove,810
+Franklin,811
+Louisville Slugger,812
+Marucci,813
+DeMarini,814
+EvoShield,815
+3N2,816
+PALMGARD,817
+Colosseum,818
+Zobha,819
+Golfware,820
+AS Sports,821
+Tail,822
+EP Pro,823
+Lady Hagen,824
+Sport Haley,825
+LIJA,826
+Antigua,827
+Bette & Court,828
+Nishiki,829
+Shimano,830
+showers pass,831
+Louis Garneau,832
+Giro,833
+Champion,834
+Lazypants,835
+Volcom,836
+Soffe,837
+Gerber,838
+MotoTech,839
+Mos-Quit-O,840
+QuipCo,841
+Dorr,842
+Jockey,843
+UCB,844
+Zigaro,845
+ECCO,846
+FootJoy,847
+Walter Hagen,848
+PGA,849
+Crocs,850
+TRUE linkswear,851
+Rocky,852
+Capezio,853
+Calvin Klein Performance,854
+Jamie Sadock,855
+Sunice,856
+Warrior,857
+Bullwin,858
+Harris,859
+Hicko,860
+LEMFO?,861
+Walsontop?,862
+LEMFO,863
+Walsontop,864
+Triqer,865
+Sega,866
+Sai Works,867
+TK Hockey,868
+Gosen ILD 16,871
+RumbleRoller,963
+Natural Fitness,964
+PTEX,965
+Storelli,966
+CW-X,967
+JUNK,968
+Bauerfeind,969
+Feetures!,970
+STOTT PILATES,971
+elite HOCKEY,972
+Glove It,973
+GKI,974
+LaCrosse,975
+TravisMathew,976
+Costa Del Mar,977
+Patagonia,978
+Salt Life,979
+G. Loomis,980
+Browning,981
+SKINS,982
+Field & Stream,983
+Bogs,984
+DBX,985
+UGG,986
+Bates,987
+Realtree Outfitters,988
+Akadema,989
+Glovemate,990
+Duofold,991
+Hot Chillys,992
+Descente,993
+Mountain Hardwear,994
+Gerry,995
+Marmot,996
+Turbine,997
+St. Croix,998
+CCM,999
+Sunday Afternoons,1000
+Outdoor Research,1001
+Snow Angel,1002
+BH Fitness,1003
+Wahoo,1004
+Umbro,1005
+Reusch,1006
+AND1,1007
+Ektio,1008
+Rawlings,1009
+Rejuvenation,1010
+empower,1011
+Perfect Bands,1012
+Select,1013
+Canari,1014
+Kwik Goal,1015
+Dick's Sporting Goods,1016
+Gaiam,1017
+KT Tape,1018
+First Practice,1019
+Jugs,1020
+Baden,1021
+PRIMED,1022
+ATEC,1023
+Adams USA,1024
+deBeer,1025
+5.11 Tactical,1026
+Wolverine,1027
+Danner,1028
+Hanwag,1029
+Irish Setter,1030
+Ariat,1031
+Durango,1032
+SOREL,1033
+Arborwear,1034
+Icebreaker,1035
+Craft,1036
+Glamorise,1037
+ENELL,1038
+Moving Comfort,1039
+Hot Shot,1040
+Panache,1041
+Brainstorm Gear,1042
+Pedal Pushers,1043
+ZOIC,1044
+Diamondback,1045
+PROVIZ,1046
+Hercules,1048
+BSA,1049
+Hero,1050
+X-Bicycle,1051
+HLX-NMC,1052
+Cosmic,1053
+Montra,1055
+DECATHLON,1056
+EZ' Playmates,1057
+eForChina,1058
+UNIFOX,1059
+Fantom,1060
+Hi-Bird,1061
+AOK,1062
+NULL,1063
+Völkl,1064
+Under Armour®,1065
+WRIGHTSOCK™,1066
+Fitking,1067
+Microsoft,1068
+MS,1069
+Black Clover,1070
+Schiek,1071
+Phoenix,1072
+Upland,1073
+Lapierre,1074
+Ghost,1075
+Haibike,1076
+Sanguine,1077
+4FUN,1078
+Maxxis,1079
+Via-Terra,1080
+Kong,1081
+RF,1085
+Others,1086
+Sports,1087
+Test,1097
+TPL,1098
+Polisport,1099
+Promax,1100
+Livia,1101
+Fleet,1102
+Tisofi,1103
+PORT,1104
+Sporting Tools,1105
+VSI,1106
+ZEEFOX,1107
+DEKKAN BULLZ,1108
+KLAAPP,1109
+Wimbledon,1110
+Elan,1111
+Boli,1112
+Diamond,1113
+SD Fitness,1114
+Fit king,1115
+TI Cycles,1116
+P,1117
+0,1118
+Vionic,1119
+DeFeet,1120
+Guy Harvey,1121
+Quest ,1122
+Perfect Fitness,1123
+12235.75,1124
+14023.25,1125
+15810.75,1126
+14917.0,1127
+13129.5,1128
+16704.5,1129
+11788.875,1130
+17598.25,1131
+11342.0,1132
+9107.625,1133
+9554.5,1134
+7767.0,1135
+12682.625,1136
+7320.125,1137
+13576.375,1138
+8660.75,1139
+10448.25,1140
+10001.375,1141
+10895.125,1142
+Powermax Fitness,1143
+Voodoo Hockey,1144
+Opro,1145
+PowerMax,1146
+Ring Fight,1147
+Swiss Pro,1148
+Title,1149
+Facto Power,1150
+7767,1151
+14917,1152
+11342,1153
+Newgy,1154
+Horizon Socks,1155
+Peebuddy,1156
+Warmee,1157
+Viva Fitness,1158
+Albatross,1159
+Vector X,1160
+Fly Power,1161
+Maxxport,1162
+Technix,1163

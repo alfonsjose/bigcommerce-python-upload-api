@@ -1,0 +1,64 @@
+Product Creation:
+
+The following properties of the product are required. The request won’t be fulfilled unless these properties are valid.
+
+name
+price
+categories
+type
+availability
+weight
+
+SKU/RULE CREATION : 
+
+Creation of Options/SKUs and Rules:
+
+
+- First Create Option Set. This will be the parent container of all Rules and SKUs for a product.
+
+
+- Then Create an Option:
+	- https://developer.bigcommerce.com/api/stores/v2/options#create-an-option
+	- Option Name has is unique across the store and can be : "Color (Nike Dri-FIT Elite 1.0 Crew Basketball Sock)
+	- Mention Type (Color Swatch , Select etc.)
+	- POST and generate an Option ID
+
+- Then Create Option Values:
+	- https://developer.bigcommerce.com/api/stores/v2/options/values#create-an-option-value
+	- Option values which are supposed to fill an Option. For eg. UK 9,UK 10 etc.
+	- All of these will be assigned and POST to the relevant Option ID.
+
+
+- Then Create an Option Set Option and assign it to the product's Option Set ID 
+	- Resource: https://developer.bigcommerce.com/api/stores/v2/option_sets/options#create-an-option-set-option
+	- This is where the heading of the option such as 'Choose a Color' or 'Choose a Size' is created.		
+	- This resource contains all the Options/SKUs
+
+- Then Create SKUs:
+	- These are created for Stock Keepinig of the above mentioned options.
+	- https://developer.bigcommerce.com/api/objects/v2/sku
+	- https://developer.bigcommerce.com/api/stores/v2/products/skus#create-a-product-sku
+	- Need to be assigned to an the product's option_
+- Then Create Rules:
+
+
+
+#Trying to Get Multiple Level Inheritance to work. Error on line 309 because of attributes from parse_csv not being passed down to the third levl
+
+
+
+Updating Products and SKUs:
+
+If Product ID exists,
+		- then get list of all skus and match where each sku exists.
+			- if exists then check stock and update.
+				- if it does not exist then create.
+				
+
+
+
+
+
+
+NOT FOUND CASES:
+- No Category : Create or Blank ?
